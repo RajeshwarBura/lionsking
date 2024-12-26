@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lion Facts Generator</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            max-width: 800px;
+            padding: 20px;
+            text-align: center;
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 30px;
+        }
+
+        .fact-box {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            min-height: 150px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        #fact-display {
+            font-size: 18px;
+            line-height: 1.6;
+            color: #444;
+        }
+
+        #generate-btn {
+            background-color: #e67e22;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        #generate-btn:hover {
+            background-color: #d35400;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🦁 Lion Facts Generator</h1>
+        <div class="fact-box">
+            <p id="fact-display">Click the button to generate a lion fact!</p>
+        </div>
+        <button id="generate-btn">Generate Fact</button>
+    </div>
+
+    <script>
+        const lionFacts = [
+            "Male lions' manes can be an indicator of their health and testosterone levels - darker, fuller manes typically indicate a healthier, stronger lion.",
+            "Lions are the only big cats that live in social groups called prides. A pride typically consists of 1-3 males, around 12 related females, and their cubs.",
+            "While lions are known as the 'King of the Jungle,' they actually live in grasslands and savannas. They rarely inhabit jungles.",
+            "Female lions do approximately 90% of the pride's hunting, while males focus on protecting the territory and the pride.",
+            "A lion's roar can be heard from up to 5 miles (8 kilometers) away, making it one of the loudest animal vocalizations.",
+            "Lion cubs are born with spots that fade as they grow older. These spots help camouflage them in their early months.",
+            "Lions can sleep up to 20 hours a day, making them one of the laziest of all wild cats.",
+            "A lion's tongue is covered in sharp, hook-like papillae that help them strip meat from bones and groom their fur.",
+            "Lions are excellent swimmers, although they don't like water and typically avoid it.",
+            "Unlike most big cats, lion cubs are born with blue eyes that change to amber or brown by the age of 2-3 months."
+        ];
+
+        const factDisplay = document.getElementById('fact-display');
+        const generateBtn = document.getElementById('generate-btn');
+
+        // Function to generate a random fact
+        function generateFact() {
+            // Get a random index
+            const randomIndex = Math.floor(Math.random() * lionFacts.length);
+            // Display the fact
+            factDisplay.textContent = lionFacts[randomIndex];
+        }
+
+        // Add click event listener to the button
+        generateBtn.addEventListener('click', generateFact);
+
+        // Generate a random fact when the page loads
+        generateFact();
+    </script>
+</body>
+</html>
